@@ -1,0 +1,21 @@
+﻿@model ChoixResto.ViewModels.UtilisateurViewModel
+
+@{
+    <p>
+        Veuillez Remplir les champs pour créer voter compte :
+    </p>
+    using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(m => m.Utilisateur.Prenom)
+            @Html.TextBoxFor(m => m.Utilisateur.Prenom)
+            @Html.ValidationMessageFor(m => m.Utilisateur.Prenom)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Utilisateur.Password)
+            @Html.PasswordFor(m => m.Utilisateur.Password)
+            @Html.ValidationMessageFor(m => m.Utilisateur.Password)
+        </div>
+        <input type="submit" value="Créer" />
+    }
+}

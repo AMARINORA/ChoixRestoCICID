@@ -1,0 +1,48 @@
+﻿@model ChoixResto.ViewModels.AccueilViewModel
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+</head>
+<body>
+	<div>Prêts à choisir un restaurant ?</div>
+	@using (Html.BeginForm())
+	{
+		<input type="submit" value="Créer un sondage" />
+	}
+	<ul>
+		<li>
+			@Html.ActionLink(
+				linkText: "Ajouter un resturant",
+				actionName: "CreerRestaurant",
+				controllerName: "Restaurant"
+			)
+		</li>
+		<li>
+			@Html.ActionLink(
+				linkText: "Modifier les resturants",
+				actionName: "Index",
+				controllerName: "Restaurant"
+			)
+		</li>
+		<li>
+			@Html.ActionLink(
+				linkText: "Participer à un sondage",
+				actionName: "ListeSondages",
+				controllerName: "Vote"
+			)
+		</li>
+		<li>
+			@Html.ActionLink(
+			   linkText: "Déconnexion",
+			   actionName: "Deconnexion",
+			   controllerName: "Login"
+			)
+		</li>
+	</ul>
+</body>
+</html>
